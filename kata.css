@@ -1,0 +1,79 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#finalScore {
+    font-size: 80px; /* Tamanho grande para o resultado da pontuação */
+    margin-bottom: 20px; /* Espaço acima das caixas de entrada */
+}
+
+.scores-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Impede que os itens sejam quebrados em linhas */
+    gap: 10px; /* Mantenha um espaçamento entre os inputs */
+    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 250px; /* Largura fixa para os inputs */
+    height: 400px; /* Altura aumentada */
+    font-size: 100px; /* Aumento do tamanho da fonte para melhor visualização */
+    text-align: center;
+}
+
+button {
+    width: auto; /* Permite que os botões se ajustem ao texto */
+    margin-top: 20px;
+    height: auto;
+    font-size: 20px; /* Ajuste opcional para o tamanho de fonte dos botões */
+    padding: 10px 20px; /* Padding ajustado para melhorar a visualização e o clique */
+    margin-top: 10px; /* Ajuste conforme necessário para distância dos inputs */
+    /* Outros estilos para os botões conforme necessário */
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 36px; /* Tamanho de fonte aumentado para o resultado, similar aos inputs */
+}
+
+.descartada {
+    color: rgba(0, 0, 0, 0.5); /* Cinza meio transparente */
+    position: relative; /* Necessário para o pseudo-elemento */
+}
+
+.descartada::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Altura da linha */
+    background-color: black; /* Cor da linha */
+    transform: translate(-10%, 50%) rotate(-45deg); /* Ajusta o ângulo e a posição da linha */
+    transform-origin: left bottom; /* Origem da transformação */
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; } /* Ajuste a opacidade para um efeito mais suave se desejar */
+}
+
+.piscando {
+    animation: piscar 1s infinite;
+}
