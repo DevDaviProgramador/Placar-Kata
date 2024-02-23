@@ -8,6 +8,7 @@ body, html {
 }
 
 .container {
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,9 +17,14 @@ body, html {
 }
 
 #finalScore {
-    font-size: 80px; /* Tamanho grande para o resultado da pontuação */
-    margin-bottom: 20px; /* Espaço acima das caixas de entrada */
+    font-size: 100px;
+    margin-bottom: 5px; /* Mantenha ou ajuste o espaçamento conforme necessário */
+    height: 60px; /* Define uma altura fixa para o elemento */
+    display: flex; /* Utiliza flexbox para alinhar o conteúdo */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
 }
+
 
 .scores-container {
     display: flex;
@@ -53,27 +59,15 @@ button {
 }
 
 .descartada {
-    color: rgba(0, 0, 0, 0.5); /* Cinza meio transparente */
+    color: red; /* Muda a cor do texto para vermelho */
     position: relative; /* Necessário para o pseudo-elemento */
 }
 
-.descartada::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px; /* Altura da linha */
-    background-color: black; /* Cor da linha */
-    transform: translate(-10%, 50%) rotate(-45deg); /* Ajusta o ângulo e a posição da linha */
-    transform-origin: left bottom; /* Origem da transformação */
-}
-
-@keyframes piscar {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; } /* Ajuste a opacidade para um efeito mais suave se desejar */
-}
-
-.piscando {
-    animation: piscar 1s infinite;
+#logo {
+    position: fixed; /* Fixa a imagem na posição, fazendo com que ela não se mova ao rolar a página */
+    top: 0; /* Alinha a parte superior da imagem com a parte superior da viewport */
+    left: 0; /* Alinha a parte esquerda da imagem com a parte esquerda da viewport */
+    width: 200px; /* Ajuste conforme necessário para definir a largura da imagem */
+    height: auto; /* Mantém a proporção da imagem ao definir a largura */
+    z-index: 1000; /* Garante que a imagem fique acima de outros elementos da página */
 }
